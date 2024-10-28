@@ -46,9 +46,9 @@ go_library(
 cc_library(
     name = "lib",
     srcs = select({
-        "@io_bazel_rules_go//go/platform:linux": ["packaged/lib/linux-amd64/libwasmer.a"],
-        "@io_bazel_rules_go//go/platform:darwin_amd64": ["packaged/lib/darwin-amd64/libwasmer.a"],
-        "@io_bazel_rules_go//go/platform:darwin_arm64": ["packaged/lib/darwin-aarch64/libwasmer.a"],
+        "@io_bazel_rules_go//go/platform:linux": ["//wasmer/packaged/lib/linux-amd64:libwasmer.a"],
+        "@io_bazel_rules_go//go/platform:darwin_amd64": ["//wasmer/packaged/lib/darwin-amd64:libwasmer.a"],
+        "@io_bazel_rules_go//go/platform:darwin_arm64": ["//wasmer/packaged/lib/darwin-aarch64:libwasmer.a"],
         "//conditions:default": ["UNSUPPORTED_PLATFORM"],
     }),
     hdrs = glob(["packaged/include/**/*"]),
