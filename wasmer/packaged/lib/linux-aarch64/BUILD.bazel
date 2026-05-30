@@ -1,1 +1,1 @@
-exports_files(glob(["*.a"]))
+exports_files(glob(["*.a"], allow_empty = True))

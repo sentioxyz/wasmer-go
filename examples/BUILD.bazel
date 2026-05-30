@@ -1,4 +1,4 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_test")
+load("@rules_go//go:def.bzl", "go_test")
 
 go_test(
     name = "examples_test",
@@ -11,5 +11,5 @@ go_test(
         "example_instance_test.go",
         "example_memory_test.go",
     ],
-    deps = ["@com_github_wasmerio_wasmer_go//wasmer:go_default_library"],
+    deps = ["//wasmer"],
 )
